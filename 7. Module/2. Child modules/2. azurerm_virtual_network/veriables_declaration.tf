@@ -1,0 +1,4 @@
+variable "RGs"{
+    type= map
+}
+

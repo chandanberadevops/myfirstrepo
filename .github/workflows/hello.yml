@@ -18,3 +18,10 @@ jobs:
 
       - name: Say Hello
         run: echo "Hello Chandan! My first GitHub Pipeline is running."
+        
+      - name: Show GitHub Information
+        run: |
+          echo "Repository = ${{ github.repository }}"
+          echo "Branch = ${{ github.ref }}"
+          echo "Triggered by = ${{ github.actor }}"
+          echo "Run Number = ${{ github.run_number }}"

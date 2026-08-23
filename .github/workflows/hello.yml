@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+env:
+  ENVIRONMENT: dev
+  PROJECT: Azure-Terraform
 
 jobs:
   hello:
@@ -25,3 +28,7 @@ jobs:
           echo "Branch = ${{ github.ref }}"
           echo "Triggered by = ${{ github.actor }}"
           echo "Run Number = ${{ github.run_number }}"
+      - name: Show Environment Variables
+        run: |
+          echo "Environment = $ENVIRONMENT"
+          echo "Project = $PROJECT"

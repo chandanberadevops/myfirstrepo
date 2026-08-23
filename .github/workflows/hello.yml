@@ -32,3 +32,7 @@ jobs:
         run: |
           echo "Environment = $ENVIRONMENT"
           echo "Project = $PROJECT"
+      - name: Test GitHub Secret
+        run: echo "Secret is available to the pipeline"
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}

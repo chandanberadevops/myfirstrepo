@@ -36,3 +36,13 @@ jobs:
         run: echo "Secret is available to the pipeline"
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
+            - name: Test GitHub Secret
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+          if [ -n "$MY_SECRET" ]; then
+            echo "Secret is available ✅"
+          else
+            echo "Secret is missing ❌"
+            exit 1
+          fi
